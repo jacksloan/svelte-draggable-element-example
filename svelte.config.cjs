@@ -15,7 +15,7 @@ module.exports = {
 
 	kit: {
 		adapter: static(),
-		appDir: 'static', // if left unchanged _app will be used and ignored by Github pages
+		appDir: 'assets', // if left unchanged _app will be used and ignored by Github pages
 
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
