@@ -5,8 +5,9 @@
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
 		"clean": "rimraf './build' './.svelte'",
+		"fix-links": "replace-in-files --string='/./assets' --replacement='./assets' ./build/index.html",
 		"publish": "gh-pages -d build",
-		"deploy": "npm-run-all clean build publish",
+		"deploy": "npm-run-all clean build fix-links publish",
 		"start": "svelte-kit start",
 		"lint": "prettier --check . && eslint --ignore-path .gitignore .",
 		"format": "prettier --write ."
@@ -30,6 +31,7 @@
 		"postcss-load-config": "^3.0.1",
 		"prettier": "~2.2.1",
 		"prettier-plugin-svelte": "^2.2.0",
+		"replace-in-file": "^6.2.0",
 		"rimraf": "^3.0.2",
 		"sass": "^1.32.10",
 		"svelte": "^3.29.0",
