@@ -4,7 +4,7 @@
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build && sed -i '' 's/\\/\\.\\//\\.\\//' ./build/index.html",
-		"deploy": "svelte-kit build && gh-pages -d build",
+		"deploy": "npm run build && gh-pages -d build",
 		"start": "svelte-kit start",
 		"lint": "prettier --check . && eslint --ignore-path .gitignore .",
 		"format": "prettier --write ."
