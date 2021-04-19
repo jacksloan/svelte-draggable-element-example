@@ -28,21 +28,27 @@
 		on:click={resetAllCoords}>Reset Position</button
 	>
 </section>
-<main class="w-screen h-screen p-2">
+<main class="w-full h-full p-2 select-none">
 	<DragElement coords={coords1}>
-		<div class="w-64 h-64 flex flex-row items-center justify-center bg-red-400">
+		<div
+			class="w-64 h-64 flex flex-row items-center justify-center bg-red-400 border border-red-600 rounded-md"
+		>
 			<p>Drag Me</p>
 		</div>
 	</DragElement>
 
 	<DragElement coords={coords2}>
-		<div class="w-64 h-64 flex flex-row items-center justify-center bg-green-400">
+		<div
+			class="w-64 h-64 flex flex-row items-center justify-center bg-green-400 border border-green-600 rounded-md"
+		>
 			<p>Drag Me</p>
 		</div>
 	</DragElement>
 
 	<DragElement coords={coords3}>
-		<div class="w-64 h-64 flex flex-row items-center justify-center bg-indigo-400">
+		<div
+			class="w-64 h-64 flex flex-row items-center justify-center bg-indigo-400 border border-indigo-600 rounded-md"
+		>
 			<p>Drag Me</p>
 		</div>
 	</DragElement>
