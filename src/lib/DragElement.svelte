@@ -30,6 +30,7 @@
 
 <div
 	class="relative inline-block select-none shadow-lg hover:shadow-xl transition-shadow duration-200"
+	class:highlightTop={$topIndex === zIndex}
 	use:draggable
 	on:dragstart={updateZ}
 	on:dragmove={handleDrag}
@@ -37,3 +38,9 @@
 >
 	<slot />
 </div>
+
+<style>
+	.highlightTop {
+		@apply shadow-2xl;
+	}
+</style>

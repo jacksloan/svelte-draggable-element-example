@@ -7,6 +7,7 @@
 	const coords1 = createCoords();
 	const coords2 = createCoords();
 	const coords3 = createCoords();
+	const coords4 = createCoords();
 
 	function createCoords() {
 		return spring({ x: 0, y: 0 }, { stiffness: 0.1, damping: 0.3 });
@@ -17,7 +18,7 @@
 	}
 
 	function resetAllCoords() {
-		[coords1, coords2, coords3].forEach(reset);
+		[coords1, coords2, coords3, coords4].forEach(reset);
 	}
 </script>
 
@@ -53,7 +54,7 @@
 		</div>
 	</DragElement>
 
-	<DragElement coords={coords3}>
+	<DragElement coords={coords4}>
 		<div
 			class="w-64 h-64 flex flex-row items-center justify-center bg-yellow-400 border border-yellow-600 rounded-md"
 		>
