@@ -4,7 +4,7 @@
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
-		"clean": "rimraf './build'",
+		"clean": "rimraf './build' './.svelte'",
 		"publish": "gh-pages -d build",
 		"deploy": "npm-run-all clean build publish",
 		"start": "svelte-kit start",
