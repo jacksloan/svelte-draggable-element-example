@@ -29,11 +29,11 @@
 </script>
 
 <div
-	class="relative inline-block select-none cursor-move shadow-lg hover:shadow-xl transition-shadow duration-200"
+	class="relative inline-block select-none shadow-lg hover:shadow-xl transition-shadow duration-200"
 	use:draggable
 	on:dragstart={updateZ}
 	on:dragmove={handleDrag}
-	style="transform: translate({$coords.x}px, {$coords.y}px); z-index: {zIndex};"
+	style="transform: translate({$coords.x}px, {$coords.y}px); z-index: {zIndex}; cursor: grab;"
 >
 	<slot />
 </div>
