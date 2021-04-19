@@ -14,10 +14,8 @@ module.exports = {
 	}),
 
 	kit: {
-		// By default, `npm run build` will create a standard Node app.
-		// You can create optimized builds for different platforms by
-		// specifying a different adapter
-		adapter: static({ out: 'docs' }),
+		adapter: static(),
+		appDir: 'static', // if left unchanged _app will be used and ignored by Github pages
 
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
