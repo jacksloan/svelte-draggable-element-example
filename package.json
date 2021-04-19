@@ -5,7 +5,7 @@
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
 		"clean": "rimraf './build' './.svelte'",
-		"fix-links": "replace-in-files --string='/./assets' --replacement='./assets' ./build/index.html",
+		"fix-links": "replace-in-file /./assets ./assets ./build/index.html",
 		"publish": "gh-pages -d build",
 		"deploy": "npm-run-all clean build fix-links publish",
 		"start": "svelte-kit start",
