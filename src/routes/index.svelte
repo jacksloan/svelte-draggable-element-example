@@ -52,4 +52,12 @@
 			<p>Drag Me</p>
 		</div>
 	</DragElement>
+
+	<DragElement coords={coords3}>
+		<div
+			class="w-64 h-64 flex flex-row items-center justify-center bg-yellow-400 border border-yellow-600 rounded-md"
+		>
+			<p>Drag Me</p>
+		</div>
+	</DragElement>
 </main>
