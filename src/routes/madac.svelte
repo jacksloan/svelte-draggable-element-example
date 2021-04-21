@@ -4,7 +4,17 @@
 
 	import Reminders from '$lib/Reminders.svelte';
 
-	const remindersCoords = spring({ x: 0, y: 0 }, { damping: 0.3, stiffness: 0.1 });
+	const _1 = spring({ x: 0, y: 0 }, { damping: 0.3, stiffness: 0.1 });
+	const _2 = spring({ x: 0, y: 0 }, { damping: 0.3, stiffness: 0.1 });
+	const _3 = spring({ x: 0, y: 0 }, { damping: 0.3, stiffness: 0.1 });
+	const _4 = spring({ x: 0, y: 0 }, { damping: 0.3, stiffness: 0.1 });
+	const _5 = spring({ x: 0, y: 0 }, { damping: 0.3, stiffness: 0.1 });
+
+	setTimeout(() => _1.set({ x: 150, y: 550 }), 100);
+	setTimeout(() => _2.set({ x: 800, y: 0 }), 300);
+	setTimeout(() => _3.set({ x: 1500, y: 350 }), 500);
+	setTimeout(() => _4.set({ x: 500, y: 600 }), 700);
+	setTimeout(() => _5.set({ x: 850, y: 350 }), 900);
 
 	let isEditing: boolean;
 </script>
@@ -13,8 +23,36 @@
 <main class="h-screen w-screen p-0 m-0 bg-peach-dark relative">
 	<DragElement
 		isDraggable={!isEditing}
-		coords={remindersCoords}
-		containerClass="shadow-2xl rounded-3xl bg-white absolute top-96 left-96"
+		coords={_1}
+		containerClass="shadow-2xl rounded-3xl bg-white absolute"
+	>
+		<Reminders bind:isEditing />
+	</DragElement>
+	<DragElement
+		isDraggable={!isEditing}
+		coords={_2}
+		containerClass="shadow-2xl rounded-3xl bg-white absolute"
+	>
+		<Reminders bind:isEditing />
+	</DragElement>
+	<DragElement
+		isDraggable={!isEditing}
+		coords={_3}
+		containerClass="shadow-2xl rounded-3xl bg-white absolute"
+	>
+		<Reminders bind:isEditing />
+	</DragElement>
+	<DragElement
+		isDraggable={!isEditing}
+		coords={_4}
+		containerClass="shadow-2xl rounded-3xl bg-white absolute"
+	>
+		<Reminders bind:isEditing />
+	</DragElement>
+	<DragElement
+		isDraggable={!isEditing}
+		coords={_5}
+		containerClass="shadow-2xl rounded-3xl bg-white absolute"
 	>
 		<Reminders bind:isEditing />
 	</DragElement>
