@@ -63,7 +63,7 @@
 	<button
 		on:click={addReminder}
 		aria-label="Add Reminder"
-		class="absolute focus:outline-none z-50 bottom-3 right-3 w-8 h-8 rounded-full bg-blue-500 flex flex-row items-center justify-center shadow-md"
+		class="absolute focus:outline-none z-50 bottom-3 right-3 w-9 h-9 rounded-full bg-blue-500 flex flex-row items-center justify-center shadow-md"
 	>
 		<PlusIcon width={18} height={18} />
 	</button>
