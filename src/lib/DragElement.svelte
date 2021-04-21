@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { draggable } from '$lib/draggable';
-	import { createEventDispatcher } from 'svelte';
 	import { spring } from 'svelte/motion';
 	import { get } from 'svelte/store';
 	import { topIndex } from '$lib/store';
@@ -8,14 +7,16 @@
 
 	export let coords = spring({ x: 0, y: 0 });
 	export let zIndex = 0;
-
-	const dispatch = createEventDispatcher();
+	export let containerClass = '';
+	export let isDraggable = true;
 
 	function handleDrag(event) {
-		coords.update(($coords) => ({
-			x: $coords.x + event.detail.dx,
-			y: $coords.y + event.detail.dy,
-		}));
+		if (isDraggable) {
+			coords.update(($coords) => ({
+				x: $coords.x + event.detail.dx,
+				y: $coords.y + event.detail.dy,
+			}));
+		}
 	}
 
 	function updateZ() {
@@ -29,7 +30,7 @@
 </script>
 
 <div
-	class="relative inline-block select-none shadow-lg hover:shadow-xl transition-shadow duration-200"
+	class="relative inline-block select-none {containerClass}"
 	class:highlightTop={$topIndex === zIndex}
 	use:draggable
 	on:dragstart={updateZ}

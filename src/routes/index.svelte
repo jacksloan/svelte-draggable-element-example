@@ -1,5 +1,4 @@
 <script lang="ts">
-	import './app.scss';
 	import DragElement from '$lib/DragElement.svelte';
 	import { spring } from 'svelte/motion';
 	import type { Spring } from 'svelte/motion';
