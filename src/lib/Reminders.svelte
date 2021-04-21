@@ -97,6 +97,7 @@
 						bind:this={item.input}
 						style="width: {item.value.length * 9}px; min-width: 200px;"
 						class="ml-3 block focus:outline-none text-gray-500 font-normal"
+						class:is-checked={item.checked}
 					/>
 				</li>
 			{/each}
@@ -112,5 +113,11 @@
 		@apply border-gray-200;
 		@apply absolute;
 		@apply bottom-0;
+	}
+
+	// HACK - postcss will purge class bound variables
+	.is-checked {
+		@apply line-through;
+		@apply text-gray-400;
 	}
 </style>
