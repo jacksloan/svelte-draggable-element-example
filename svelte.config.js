@@ -15,7 +15,9 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-			fallback: 'index.html'
+			pages: 'build',
+			assets: 'build',
+			fallback: null
 		}),
 		paths: {
 			base: dev ? '' : '/svelte-draggable-element-example'
