@@ -1,12 +1,16 @@
+<script lang="ts">
+	import { basePath } from '$lib/constants';
+</script>
+
 <main class="container mx-auto px-4 pt-4 prose">
 	<h1>Draggable Examples</h1>
 
 	<ul>
 		<li>
-			<a href="/basic">Basic</a>
+			<a href={basePath + '/madac'}>Basic</a>
 		</li>
 		<li>
-			<a href="/madac">mad.ac clone</a>
+			<a href={basePath + '/madac'}>mad.ac clone</a>
 		</li>
 	</ul>
 </main>
