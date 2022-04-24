@@ -5,7 +5,12 @@ const config = {
 		extend: {}
 	},
 
-	plugins: []
+	plugins: [
+		require('@tailwindcss/forms')({
+			strategy: 'class'
+		}),
+		require('@tailwindcss/typography')
+	]
 };
 
 module.exports = config;
