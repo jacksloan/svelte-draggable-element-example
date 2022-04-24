@@ -10,11 +10,11 @@
 	export let containerClass = '';
 	export let isDraggable = true;
 
-	function handleDrag(event) {
+	function handleDrag(event: { detail: { x: number; y: number; dx: number; dy: number } }) {
 		if (isDraggable) {
 			coords.update(($coords) => ({
 				x: $coords.x + event.detail.dx,
-				y: $coords.y + event.detail.dy,
+				y: $coords.y + event.detail.dy
 			}));
 		}
 	}
