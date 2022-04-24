@@ -1,5 +1,9 @@
 <script lang="ts">
 	import { basePath } from '$lib/constants';
+
+	function link(...pathParts: string[]): string {
+		return [basePath, ...pathParts].join('/');
+	}
 </script>
 
 <main class="container mx-auto px-4 pt-4 prose">
@@ -7,10 +11,10 @@
 
 	<ul>
 		<li>
-			<a href={basePath + '/madac'}>Basic</a>
+			<a href={link('basic')}>Basic</a>
 		</li>
 		<li>
-			<a href={basePath + '/madac'}>mad.ac clone</a>
+			<a href={link('madac')}>mad.ac clone</a>
 		</li>
 	</ul>
 </main>
