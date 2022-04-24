@@ -14,11 +14,10 @@ const config = {
 	],
 
 	kit: {
-		adapter: adapter({
-			pages: 'build',
-			assets: 'build',
-			fallback: 'index.html'
-		}),
+		adapter: adapter(),
+		prerender: {
+			default: true
+		},
 		paths: {
 			base: dev ? '' : '/svelte-draggable-element-example'
 		}
