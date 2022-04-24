@@ -1,0 +1,82 @@
+{
+  ".svelte-kit/runtime/client/start.js": {
+    "file": "start-91605e3b.js",
+    "src": ".svelte-kit/runtime/client/start.js",
+    "isEntry": true,
+    "imports": [
+      "_index-91353806.js",
+      "_index-78954055.js"
+    ],
+    "dynamicImports": [
+      "src/routes/__layout.svelte",
+      ".svelte-kit/runtime/components/error.svelte",
+      "src/routes/index.svelte",
+      "src/routes/madac.svelte"
+    ]
+  },
+  "src/routes/__layout.svelte": {
+    "file": "pages/__layout.svelte-f958faef.js",
+    "src": "src/routes/__layout.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-91353806.js"
+    ],
+    "css": [
+      "assets/pages/__layout.svelte-84341712.css"
+    ]
+  },
+  ".svelte-kit/runtime/components/error.svelte": {
+    "file": "error.svelte-25b859a4.js",
+    "src": ".svelte-kit/runtime/components/error.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-91353806.js"
+    ]
+  },
+  "src/routes/index.svelte": {
+    "file": "pages/index.svelte-7697e010.js",
+    "src": "src/routes/index.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-91353806.js",
+      "_DragElement-0d159ee5.js",
+      "_index-78954055.js"
+    ]
+  },
+  "src/routes/madac.svelte": {
+    "file": "pages/madac.svelte-9ef5f240.js",
+    "src": "src/routes/madac.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-91353806.js",
+      "_DragElement-0d159ee5.js",
+      "_index-78954055.js"
+    ],
+    "css": [
+      "assets/pages/madac.svelte-bc11605b.css"
+    ]
+  },
+  "_index-91353806.js": {
+    "file": "chunks/index-91353806.js"
+  },
+  "_index-78954055.js": {
+    "file": "chunks/index-78954055.js",
+    "imports": [
+      "_index-91353806.js"
+    ]
+  },
+  "_DragElement-0d159ee5.js": {
+    "file": "chunks/DragElement-0d159ee5.js",
+    "imports": [
+      "_index-91353806.js",
+      "_index-78954055.js"
+    ],
+    "css": [
+      "assets/DragElement-3b71562a.css"
+    ]
+  }
+}
