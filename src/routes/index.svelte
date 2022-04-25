@@ -1,9 +1,5 @@
 <script lang="ts">
-	import { basePath } from '$lib/constants';
-
-	function link(...pathParts: string[]): string {
-		return [basePath, ...pathParts].join('/');
-	}
+	import { link } from '$lib/helpers';
 </script>
 
 <main class="container mx-auto px-4 pt-4 prose">
