@@ -1,9 +1,8 @@
 <script lang="ts">
 	import DragElement from '$lib/DragElement.svelte';
-	import { spring } from 'svelte/motion';
-
+	import LatestWork from '$lib/LatestWork.svelte';
 	import Reminders from '$lib/Reminders.svelte';
-	import Card from '$lib/Card.svelte';
+	import { spring } from 'svelte/motion';
 
 	const coordsReminders = spring({ x: 0, y: 0 }, { damping: 0.3, stiffness: 0.1 });
 	setTimeout(() => coordsReminders.set({ x: 50, y: 50 }), 0);
@@ -40,22 +39,9 @@
 		<DragElement
 			coords={coordsLatestWork}
 			isDraggable={true}
-			containerClass="shadow-2xl rounded-3xl bg-white cursor-grab"
+			containerClass="shadow-2xl rounded-3xl bg-white cursor-pointer"
 		>
-			<Card title="Latest Work">
-				<section class="w-96 p-6 text-gray-600">
-					<h2 class="text-2xl font-bold">Donut</h2>
-					<p class="font-light text-gray-500 mt-1">DeFi made quick and easy</p>
-				</section>
-				<div class="-mt-36">
-					<img
-						draggable="false"
-						class="mx-auto w-96"
-						src="/donut-applet.png"
-						alt="Donut phone illustration"
-					/>
-				</div>
-			</Card>
+			<LatestWork />
 		</DragElement>
 
 		<DragElement coords={coordsAbout} isDraggable={true} containerClass="link link-lg">
