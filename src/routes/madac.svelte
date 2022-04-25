@@ -3,64 +3,95 @@
 	import { spring } from 'svelte/motion';
 
 	import Reminders from '$lib/Reminders.svelte';
+	import Card from '$lib/Card.svelte';
 
-	const _1 = spring({ x: 0, y: 0 }, { damping: 0.3, stiffness: 0.1 });
-	const _2 = spring({ x: 0, y: 0 }, { damping: 0.3, stiffness: 0.1 });
-	const _3 = spring({ x: 0, y: 0 }, { damping: 0.3, stiffness: 0.1 });
-	const _4 = spring({ x: 0, y: 0 }, { damping: 0.3, stiffness: 0.1 });
-	const _5 = spring({ x: 0, y: 0 }, { damping: 0.3, stiffness: 0.1 });
+	const coordsReminders = spring({ x: 0, y: 0 }, { damping: 0.3, stiffness: 0.1 });
+	setTimeout(() => coordsReminders.set({ x: 50, y: 50 }), 0);
 
-	setTimeout(() => _1.set({ x: 150, y: 550 }), 20);
-	setTimeout(() => _2.set({ x: 800, y: 0 }), 40);
-	setTimeout(() => _3.set({ x: 1500, y: 350 }), 60);
-	setTimeout(() => _4.set({ x: 500, y: 600 }), 80);
-	setTimeout(() => _5.set({ x: 850, y: 350 }), 100);
+	const coordsAbout = spring({ x: -500, y: -200 }, { damping: 0.3, stiffness: 0.1 });
+	setTimeout(() => coordsAbout.set({ x: 100, y: 150 }), 0);
 
-	let isEditing: boolean;
+	const coordsWork = spring({ x: 500, y: 500 }, { damping: 0.3, stiffness: 0.1 });
+	setTimeout(() => coordsWork.set({ x: 350, y: 300 }), 0);
+
+	const coordsTeam = spring({ x: 0, y: 0 }, { damping: 0.3, stiffness: 0.1 });
+	setTimeout(() => coordsTeam.set({ x: 500, y: 50 }), 0);
+
+	const coordsContact = spring({ x: 0, y: 0 }, { damping: 0.3, stiffness: 0.1 });
+	setTimeout(() => coordsContact.set({ x: 600, y: 250 }), 0);
+
+	const coordsLatestWork = spring({ x: 0, y: 0 }, { damping: 0.3, stiffness: 0.1 });
+	setTimeout(() => coordsLatestWork.set({ x: 125, y: 125 }), 0);
+
+	let isRemindersEditing: boolean;
 </script>
 
 <!-- clone of the dashboard at https://mad.ac -->
 <main class="h-screen w-screen p-0 m-0 bg-peach-dark relative">
-	<div class="overflow-auto">
+	<div class="overflow-visible">
 		<DragElement
-			isDraggable={!isEditing}
-			coords={_1}
-			containerClass="shadow-2xl rounded-3xl bg-white absolute"
+			isDraggable={!isRemindersEditing}
+			coords={coordsReminders}
+			containerClass="shadow-2xl rounded-3xl bg-white cursor-grab"
 		>
-			<Reminders bind:isEditing />
+			<Reminders bind:isEditing={isRemindersEditing} />
 		</DragElement>
+
 		<DragElement
-			isDraggable={!isEditing}
-			coords={_2}
-			containerClass="shadow-2xl rounded-3xl bg-white absolute"
+			coords={coordsLatestWork}
+			isDraggable={true}
+			containerClass="shadow-2xl rounded-3xl bg-white cursor-grab"
 		>
-			<Reminders bind:isEditing />
+			<Card title="Latest Work">
+				<section class="w-96 p-6 text-gray-600">
+					<h2 class="text-2xl font-bold">Donut</h2>
+					<p class="font-light text-gray-500 mt-1">DeFi made quick and easy</p>
+				</section>
+				<div class="-mt-36">
+					<img
+						draggable="false"
+						class="mx-auto w-96"
+						src="/donut-applet.png"
+						alt="Donut phone illustration"
+					/>
+				</div>
+			</Card>
 		</DragElement>
-		<DragElement
-			isDraggable={!isEditing}
-			coords={_3}
-			containerClass="shadow-2xl rounded-3xl bg-white absolute"
-		>
-			<Reminders bind:isEditing />
+
+		<DragElement coords={coordsAbout} isDraggable={true} containerClass="link link-lg">
+			<h3>About</h3>
 		</DragElement>
-		<DragElement
-			isDraggable={!isEditing}
-			coords={_4}
-			containerClass="shadow-2xl rounded-3xl bg-white absolute"
-		>
-			<Reminders bind:isEditing />
+
+		<DragElement coords={coordsWork} isDraggable={true} containerClass="link link-lg">
+			<h3>Work</h3>
 		</DragElement>
-		<DragElement
-			isDraggable={!isEditing}
-			coords={_5}
-			containerClass="shadow-2xl rounded-3xl bg-white absolute"
-		>
-			<Reminders bind:isEditing />
+
+		<DragElement coords={coordsContact} isDraggable={true} containerClass="link link-sm">
+			<h3>Contact</h3>
+		</DragElement>
+
+		<DragElement coords={coordsTeam} isDraggable={true} containerClass="link link-sm">
+			<h3>Team</h3>
 		</DragElement>
 	</div>
 </main>
 
 <style lang="scss">
+	:global .link {
+		@apply rounded-full border border-gray-200 bg-white absolute shadow-md cursor-pointer;
+
+		h3 {
+			@apply text-2xl text-gray-700;
+		}
+	}
+	:global .link-lg {
+		@apply py-6 px-16;
+	}
+
+	:global .link-sm {
+		@apply py-4 px-8;
+	}
+
 	main {
 		background: linear-gradient(0.33turn, #f6a192, #ffd9df, #f6c492, #f6a192);
 		background-size: 1000% 1000%;

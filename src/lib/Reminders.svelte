@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { tick } from 'svelte';
+	import Card from './Card.svelte';
 	import PlusIcon from './PlusIcon.svelte';
 
 	export let isEditing = false;
@@ -14,7 +15,7 @@
 		{ value: 'No meetings on Fridays', input: undefined, checked: false },
 		{ value: 'Milestones over deadlines', input: undefined, checked: false },
 		{ value: 'Remote is the new black', input: undefined, checked: false },
-		{ value: 'Quality first and foremost', input: undefined, checked: false },
+		{ value: 'Quality first and foremost', input: undefined, checked: false }
 	];
 
 	let editingReminderIndex = -1;
@@ -59,26 +60,24 @@
 
 <svelte:window on:keydown={handleKeypress} />
 
-<div class="w-full relative">
+<Card title="Reminders">
 	<button
 		on:click={addReminder}
 		aria-label="Add Reminder"
-		class="absolute focus:outline-none z-50 bottom-3 right-3 w-9 h-9 rounded-full bg-blue-500 flex flex-row items-center justify-center shadow-md"
+		class="absolute focus:outline-none z-50 bottom-3 right-3 w-9 h-9 rounded-full bg-blue-600 flex flex-row items-center justify-center shadow-md"
 	>
 		<PlusIcon width={18} height={18} />
 	</button>
-	<div class="rounded-t-3xl bg-gray-100 w-full h-9 flex flex-row justify-center items-center">
-		<h2 class="text-gray-400 text-xs font-semibold">Reminders</h2>
-	</div>
+
 	<div class="pt-3 pb-5 px-6 relative overflow-y-auto" style="max-height: 37rem;">
 		<div class="flex flex-row w-full justify-between items-center">
 			<h3
-				class="text-2xl tracking-wider text-blue-500"
+				class="text-2xl tracking-wider text-blue-600"
 				style="font-family: 'Arial Rounded MT Bold', Arial, Helvetica, sans-serif;"
 			>
 				Commandments
 			</h3>
-			<p class="text-xl tracking-widest leading-tight text-blue-500 font-light">
+			<p class="text-xl tracking-widest leading-tight text-blue-600 font-light">
 				{totalUnchecked}
 			</p>
 		</div>
@@ -88,7 +87,7 @@
 					<input
 						bind:checked={item.checked}
 						type="checkbox"
-						class="w-5 h-5 form-checkbox rounded-full border border-gray-400 focus:outline-none focus:ring-0 focus:ring-transparent text-blue-500"
+						class="w-5 h-5 form-checkbox rounded-full border border-gray-400 focus:outline-none focus:ring-0 focus:ring-transparent text-blue-600"
 					/>
 					<input
 						bind:value={item.value}
@@ -103,7 +102,7 @@
 			{/each}
 		</ul>
 	</div>
-</div>
+</Card>
 
 <style lang="scss">
 	li::after {

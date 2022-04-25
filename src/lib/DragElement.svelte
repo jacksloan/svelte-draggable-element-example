@@ -30,12 +30,12 @@
 </script>
 
 <div
-	class="relative inline-block select-none {containerClass}"
+	class="absolute inline-block select-none {containerClass}"
 	class:highlightTop={$topIndex === zIndex}
 	use:draggable
 	on:dragstart={updateZ}
 	on:dragmove={handleDrag}
-	style="transform: translate({$coords.x}px, {$coords.y}px); z-index: {zIndex}; cursor: grab;"
+	style="transform: translate({$coords.x}px, {$coords.y}px); z-index: {zIndex};"
 >
 	<slot />
 </div>
